@@ -41,5 +41,5 @@ jobs:
         run: sudo docker compose build 
       
       - name: Push to Dockerhub
-        run: sudo docker push bakkym/fastAPI--devco:latest
+        run: sudo docker push bakkym/fast-api:latest
         
