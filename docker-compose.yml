@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    container_name: app-container
+    build: .
+    image: bakkym/fast-api:latest
+    ports:
+      - '8000:8000'
+
+  postgres:
+    container_name: postgres-container
+    image: postgres
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_DB=hellow-world
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
